@@ -1,0 +1,25 @@
+#counter {
+    display: flex;
+  justify-content: space-between;
+  width: 80px;
+  width: rem(150);
+  height: rem(50);
+  display: flex;
+
+  input {
+    flex: 0 0 rem(50);
+    height: rem(50);
+    position: relative;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    &:hover {
+     background-color: rgba(0, 0, 0, 1);
+    }
+  }
+  #buttonCountNumber {
+    display: flex;
+    align-items: center;
+  }
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html', {
+"title": "Карточка товара"
+})
+
+<body>
+  <div class="wrapper">
+    @@include('html/header.html', {})
+    <main class="page page__inner">
+      <div class="page__header">
+        <div class="page__container">
+          <nav class="page__breadcrumbs breadcrumbs">
+            <ul class="breadcrumbs__list">
+              <li class="breadcrumbs__item">
+                <a href="" class="breadcrumbs__link">Главная</a>
+              </li>
+              <li class="breadcrumbs__item">
+                <a href="" class="breadcrumbs__link">Разделочные ножи</a>
+              </li>
+              <li class="breadcrumbs__item">
+                <span class="breadcrumbs__current">Нож Снегирь</span>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product__container">
+          <div class="product__main main-product">
+            <div class="main-product__images images-product">
+              <div class="images-product__slider">
+                <div class="images-product__swiper">
+                  <div class="images-product__slide-ibg">
+                    <img src="@img/product/01.jpg" alt="Картинка">
+                  </div>
+                  <div class="images-product__slide-ibg">
+                    <img src="@img/product/01.jpg" alt="Картинка">
+                  </div>
+                  <div class="images-product__slide-ibg">
+                    <img src="@img/product/01.jpg" alt="Картинка">
+                  </div>
+                  <div class="images-product__slide-ibg">
+                    <img src="@img/product/01.jpg" alt="Картинка">
+                  </div>
+                  <div class="images-product__slide-ibg">
+                    <img src="@img/product/01.jpg" alt="Картинка">
+                  </div>
+                </div>
+              </div>
+              <div class="images-product__thumbs thumbs-images">
+                <div class="thumbs-images__slider">
+                  <div class="thumbs-images__swiper">
+                    <div class="thumbs-images__slide-ibg">
+                      <img src="@img/product/01.jpg" alt="Картинка">
+                    </div>
+                    <div class="thumbs-images__slide-ibg">
+                      <img src="@img/product/01.jpg" alt="Картинка">
+                    </div>
+                    <div class="thumbs-images__slide-ibg">
+                      <img src="@img/product/01.jpg" alt="Картинка">
+                    </div>
+                    <div class="thumbs-images__slide-ibg">
+                      <img src="@img/product/01.jpg" alt="Картинка">
+                    </div>
+                    <div class="thumbs-images__slide-ibg">
+                      <img src="@img/product/01.jpg" alt="Картинка">
+                    </div>
+                    <div class="thumbs-images__slide-ibg">
+                      <img src="@img/product/01.jpg" alt="Картинка">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="main-product__body body-product">
+              <div class="body-product__header header-product">
+                <div class="header-product__line">
+                  <h1 class="header-product__title">Нож Снегирь</h1>
+                  <a href="" class="header-product__link _icon-compare"></a>
+                  <a href="" class="header-product__link _icon-favorite"></a>
+                </div>
+                <div class="header-product__rating rating rating_set">
+                  <div class="rating__body">
+                    <div class="rating__active"></div>
+                    <div class="rating__items">
+                      <input type="radio" class="rating__item" value="1" name="rating">
+                      <input type="radio" class="rating__item" value="2" name="rating">
+                      <input type="radio" class="rating__item" value="3" name="rating">
+                      <input type="radio" class="rating__item" value="4" name="rating">
+                      <input type="radio" class="rating__item" value="5" name="rating">
+                    </div>
+                  </div>
+                  <div class="rating__value">3.6</div>
+                  <div class="rating__info">12 отзывов</div>
+                </div>
+              </div>
+              <div class="body-product__table table-product">
+                <div class="table-product__label">Артикул:</div>
+                <div class="table-product__value">AF0000001952</div>
+                <div class="table-product__label">Торговая марка:</div>
+                <div class="table-product__value">WUESTHOF (Германия)</div>
+                <div class="table-product__label">Серия:</div>
+                <div class="table-product__value">Ножи серии Classic Ikon</div>
+                <div class="table-product__label">Бонусные баллы:</div>
+                <div class="table-product__value">38</div>
+              </div>
+              <div class="body-product__options options-product">
+                <div class="options-product__label">Сталь</div>
+                <div class="options-product__value">
+                  <select name="form[]" class="form">
+                    <option value="1" selected>По популярности</option>
+                    <option value="2">По популярности</option>
+                    <option value="3">По популярности</option>
+                    <option value="4">По популярности</option>
+                  </select>
+                </div>
+              </div>
+              <div class="body-product__actions actions-product">
+                <div class="actions-product__price _icon-rub">3 865</div>
+                <div class="actions-product__row">
+                    <div id="counter">
+                       <input type="button" id="buttonCountMinus" value="-">
+                    <div id="buttonCountNumber">1</div>
+                       <input type="button" id="buttonCountPlus" value="+">
+                    </div>
+                  <div class="actions-product__buttons">
+                    <a href="" class="actions-product__cart button"><span class="_icon-cart">В корзину</span> <svg
+                        width="32" height="34" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M7.13008 7.76882H29.7121C30.3649 7.76882 30.8427 8.38411 30.681 9.01655L28.7801 16.4506C28.4405 17.7785 27.2442 18.7074 25.8736 18.7074H9.02537M0 1.49957H4.65214C5.63535 1.49957 6.47274 2.21422 6.62728 3.18521L9.6467 22.1562C9.80125 23.1272 10.6386 23.8418 11.6218 23.8418H28.203"
+                          stroke="black" stroke-width="1.5" />
+                        <path
+                          d="M15.7689 30.2656C15.7689 31.5678 14.7584 32.5758 13.5695 32.5758C12.3807 32.5758 11.3701 31.5678 11.3701 30.2656C11.3701 28.9634 12.3807 27.9554 13.5695 27.9554C14.7584 27.9554 15.7689 28.9634 15.7689 30.2656Z"
+                          stroke="black" stroke-width="1.5" />
+                        <path
+                          d="M28.746 30.2656C28.746 31.5678 27.7354 32.5758 26.5466 32.5758C25.3577 32.5758 24.3472 31.5678 24.3472 30.2656C24.3472 28.9634 25.3577 27.9554 26.5466 27.9554C27.7354 27.9554 28.746 28.9634 28.746 30.2656Z"
+                          stroke="black" stroke-width="1.5" />
+                      </svg></a>
+                    <a href="" class="actions-product__cart button button_black"><span>Купить в 1 клик</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product__info product-info">
+            <nav class="product-info__navigation">
+              <button type="submit" class="product-info__title _tab-active">Описание</button>
+              <button type="submit" class="product-info__title">Характеристика</button>
+              <button type="submit" class="product-info__title">Отзывы</button>
+            </nav>
+            <div class="product-info__content">
+              <div class="product-info__body">Легкий удобный нож с клинком, имеющим пологие вогнутые линзовидные спуски на две трети ширины клинка, образующие тонкое,
+               прекрасно режущее лезвие толщиной около 0,6 мм в районе подводов. </div>
+              <div class="product-info__body">Технические характеристики</div>
+              <div class="product-info__body">У данного товара нет отзывов. Станьте первым, кто оставил отзыв об этом товаре!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    @@include('html/footer.html', {})
+  </div>
+  @@include('html/popup.html', {})
+  <script src="js/app.min.js"></script>
+</body>
+
+</html>
