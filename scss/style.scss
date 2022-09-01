@@ -1,0 +1,156 @@
+@use "sass:math";
+
+@import "base";
+
+// &display=swap - добавить при подключении через плагин
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,600,700&display=swap");
+
+// Подключить если есть локальные файлы шрифтов
+@import "fonts";
+
+// Подключить если есть файлы иконочного шрифта
+@import "fonts/icons";
+
+// Шрифт по умолчанию
+$fontFamily: "Montserrat";
+$fontSize: rem(18); // где 18(px) - размер шрифта по умолчанию из макета
+
+// основные цвета
+$mainColor: #000;
+$mainDarkColor: #141414;
+$mainOrange: #E8AA31;;
+
+// Минимальная ширина страницы
+$minWidth: 320;
+
+// Ширина полотна(макета)
+$maxWidth: 1920;
+
+// Ширина ограничивающего контейнера (0 - нет ограничения)
+
+$maxWidthContainer: 1590;
+
+// Общий доступ у контейнера
+// (30 - по 15px  слева и справа, 0 - нет отступа)
+$containerPadding: 30;
+
+// Тип адаптива
+// 1- отзывчивость (у контайнера нет брекпоинтов)
+// 2 - по брейк-поинтам (контайнер меняет свою ширину по брейк-поинтам)
+$responsiveType: 1;
+
+// Ширина срабатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Брейк-поинты
+$pc: em($containerWidth); // Пкб ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: em(767.98); // телефоны L
+$mobileSmall: em(479.98); // телефоны s
+
+body {
+font-weight: 500;
+font-family: $fontFamily;
+// Скролл заблокирован
+// .lock & {
+//   overflow: hidden;
+//   touch-action: none;
+// }
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  // сайт загружен
+  // .loader & {
+  // }
+  // Прижимаем footer
+  // > main {
+  //   flex: 1 1 auto;
+  // }
+  // Фикс для слайдеров
+  // > * {
+  //   min-width: 0;
+  // }
+}
+
+// Ограничивающий контайнер
+/* Стили будут применяться ко всем классам содержащих *__container
+например header__container, main__container и тд.
+Снипет (HTML): cnt*/
+
+@if ($responsiveType==1) {
+  // отзывчивая
+  [class*="__container"] {
+    @if ($maxWidthContainer>0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
+      margin: 0 auto;
+    }
+    @if ($containerPadding>0) {
+      padding: 0 rem(math.div($containerPadding, 2));
+    }
+  }
+} @else {
+  // По брей-поинту
+  [class*="__container"] {
+    margin: 0 auto;
+    @if ($maxWidthContainer>0) {
+    max-width: rem($maxWidthContainer);
+    box-sizing: content-box;
+  } @else {
+    @if ($containerPadding>0) {
+      padding: 0 rem(math.div($containerPadding, 2))
+    }
+  }
+  @media (max-width: $pc) {
+    max-width: rem(970);
+  }
+  @media (max-width: $tablet) {
+    max-width: rem(750);
+  }
+  @media (max-width: $mobile) {
+    max-width: none;
+    @if ($containerPadding>0 and $maxWidthContainer>0) {
+      padding: 0 rem(math.div($containerPadding, 2))
+    }
+  }
+}
+}
+
+// Подключение стилей общих элементов проекта
+// @import "common";
+
+// Подключение стилей отдельных блоков
+@import "header";
+@import "footer";
+ @import "modal";
+ @import "common";
+ @import "ratings";
+ @import "catalog";
+ @import "select";
+ @import "range";
+ @import "checkbox";
+ @import "product";
+ @import "quantity";
+
+// Подключение стилей отдельных страниц
+@import "home";
+.page {
+    &__inner {
+      padding-top: rem(30);
+    }
+    &__header {
+      margin-bottom: rem(30);
+    }
+		&__main-block {
+		}
+    &__catalog-cards {
+		}
+    &__articles-module {
+		}
+    &__products-block {
+		}
+}
